@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page Title -->
+  <title>របាយការណ៍កែវ</title>
+
+  <!-- Description & SEO -->
+  <meta name="description" content="របាយការណ៍ប្រចាំថ្ងៃ Open Shift & Close Shift ☕🥛">
+  <meta name="author" content="Reach">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <!-- Manifest (optional, for PWA support) -->
+  <link rel="manifest" href="/static/site.webmanifest">
+
+  <!-- Theme Color (mobile browser color) -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+  <div class="container" id="reportForm">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="reach.png" alt="Reach Logo" />
+    </div>
+
+    <!-- Title -->
+    <h1>របាយការណ៍ប្រចាំថ្ងៃ</h1>
+    <p class="subtitle">🌸 Open Shift & Close Shift 🌸</p>
+
+    <!-- Date & Shift Selector -->
+    <div class="form-section">
+      <h2>📅 Date & Shift</h2>
+      <label for="reportDate">Select Date</label>
+      <input type="date" id="reportDate" name="reportDate">
+
+      <label for="shift">Select Shift</label>
+      <select id="shift" name="shift">
+        <option value="1">Shift 1</option>
+        <option value="2">Shift 2</option>
+      </select>
+    </div>
+
+    <!-- Glass Open Shift -->
+    <div class="form-section">
+      <h2>🔓 Open Shift (Glasses)</h2>
+      <label for="open22">22 oz</label>
+      <input type="number" id="open22" name="open22" placeholder="Opening 22oz">
+
+      <label for="open16">16 oz</label>
+      <input type="number" id="open16" name="open16" placeholder="Opening 16oz">
+
+      <label for="open12">12 oz</label>
+      <input type="number" id="open12" name="open12" placeholder="Opening 12oz">
+
+      <label for="open8">8 oz</label>
+      <input type="number" id="open8" name="open8" placeholder="Opening 8oz">
+    </div>
+
+    <!-- Glass Close Shift -->
+    <div class="form-section">
+      <h2>🔒 Close Shift (Glasses)</h2>
+      <label for="close22">22 oz</label>
+      <input type="number" id="close22" name="close22" placeholder="Closing 22oz">
+
+      <label for="close16">16 oz</label>
+      <input type="number" id="close16" name="close16" placeholder="Closing 16oz">
+
+      <label for="close12">12 oz</label>
+      <input type="number" id="close12" name="close12" placeholder="Closing 12oz">
+
+      <label for="close8">8 oz</label>
+      <input type="number" id="close8" name="close8" placeholder="Closing 8oz">
+    </div>
+
+    <!-- Coffee & Milk Section -->
+    <div class="form-section">
+      <h2>☕ Coffee & 🥛 Milk</h2>
+
+      <h3>Coffee (kg)</h3>
+      <label for="openCoffee">Open</label>
+      <input type="number" id="openCoffee" name="openCoffee" step="0.01" placeholder="Opening coffee (kg)">
+
+      <label for="closeCoffee">Close</label>
+      <input type="number" id="closeCoffee" name="closeCoffee" step="0.01" placeholder="Closing coffee (kg)">
+
+      <h3>Milk (ml)</h3>
+      <label for="openMilk">Open</label>
+      <input type="number" id="openMilk" name="openMilk" step="10" placeholder="Opening milk (ml)">
+
+      <label for="closeMilk">Close</label>
+      <input type="number" id="closeMilk" name="closeMilk" step="10" placeholder="Closing milk (ml)">
+    </div>
+
+    <!-- Note Section -->
+    <div class="form-section">
+      <h2>🖊️ Note</h2>
+      <label for="note">Note</label>
+      <textarea id="note" name="note" placeholder="Write your note here..."></textarea>
+    </div>
+
+    <!-- Result -->
+    <div class="report">
+      <h2>📊 Result (Sold)</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Open</th>
+              <th>Close</th>
+              <th>Sold</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>22 oz</td>
+              <td id="rOpen22">0</td>
+              <td id="rClose22">0</td>
+              <td id="rSold22">0</td>
+            </tr>
+            <tr>
+              <td>16 oz</td>
+              <td id="rOpen16">0</td>
+              <td id="rClose16">0</td>
+              <td id="rSold16">0</td>
+            </tr>
+            <tr>
+              <td>12 oz</td>
+              <td id="rOpen12">0</td>
+              <td id="rClose12">0</td>
+              <td id="rSold12">0</td>
+            </tr>
+            <tr>
+              <td>8 oz</td>
+              <td id="rOpen8">0</td>
+              <td id="rClose8">0</td>
+              <td id="rSold8">0</td>
+            </tr>
+            <tr>
+              <td>Coffee (kg)</td>
+              <td id="rOpenCoffee">0</td>
+              <td id="rCloseCoffee">0</td>
+              <td id="rSoldCoffee">0</td>
+            </tr>
+            <tr>
+              <td>Milk (ml)</td>
+              <td id="rOpenMilk">0</td>
+              <td id="rCloseMilk">0</td>
+              <td id="rSoldMilk">0</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total Glasses Sold</td>
+              <td id="rTotal">0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div id="response"></div>
+  </div>
+
+  <!-- Sticky Footer Buttons -->
+  <div class="footer-buttons">
+    <button onclick="calculate()">✨ ចុចដើម្បីរាប់កែវ ✨</button>
+    <button onclick="sendReport()">📩 Send to Telegram</button>
+  </div>
+
+  <!-- Copyright -->
+  <p class="copyright">© 2025 Made by Reach 💖</p>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
